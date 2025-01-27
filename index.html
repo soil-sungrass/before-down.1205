@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>しんどいときは頼ったらええ</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <header>
+    <h1>私たちの相談室</h1>
+    <!-- ナビゲーションメニュー -->
+    <nav class="menu">
+      <button onclick="scrollToSection('hero')">ホーム</button>
+      <button onclick="scrollToSection('about-group-home')">グループホームとは</button>
+      <button onclick="scrollToSection('consultation-support')">相談支援事業</button>
+      <button onclick="scrollToSection('contact')">お問い合わせ</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section id="hero" class="hero">
+      <div class="overlay">
+        <h2>しんどいときは頼ったらええ。一人で悩まんといて。</h2>
+        <p>暗闇で孤独を感じる方達に、「光を届けたい」という思いが私たちの原動力です。</p>
+        <div class="description">
+          <p>私たちのスタッフは20、30代。<br>
+            学校の先生やエンジニア、不動産屋、営業マンなど、いろいろな仕事や人生経験を持つ若者ばかりです。</p>
+          <p>「話すだけで心が軽くなった」<br>
+            「悩んでいた未来が少し見えるようになった」<br>
+            そんな声が、実際に寄せられています。</p>
+          <p>無理に頑張らなくても大丈夫。<br>
+            私たちが一緒に寄り添いながら、解決策を見つけていきます。</p>
+          <p>相談するのは、簡単なことじゃないかもしれません。<br>
+            でも、私たちがそっと背中を押します。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- グループホームについて -->
+    <section id="about-group-home">
+      <h2>グループホームって？</h2>
+      <p>グループホームは、数名の利用者さんが一緒に暮らしながら、日常生活のサポートを受けられる住まいの形態です。スタッフが常駐しており、家事や健康管理など、生活に必要な支援を行います。生活保護を受給されていても、住宅扶助や生活扶助を活用して負担を抑えられる場合が多くあります。</p>
+      <h3>具体的にどんなことをしてくれるの？</h3>
+      <ul>
+        <li><strong>日常生活の支援</strong>: 食事の用意や掃除・洗濯などを必要に応じてサポート。自身で行いたい場合は、スタッフが見守りやアドバイスをするなど、個人の状況に合わせます。</li>
+        <li><strong>健康管理や医療サポート</strong>: 持病がある方やお薬が欠かせない方も、服薬のタイミングを一緒にチェックしたり、通院の予定を調整したりとサポートを受けられます。</li>
+        <li><strong>仲間と暮らす安心感</strong>: 他の利用者さんとコミュニケーションを取る機会が多いので、孤立しにくい環境が整っています。</li>
+      </ul>
+      <h3>こんな方におすすめ</h3>
+      <ul>
+        <li>一人暮らしは不安だけど、自立した生活も大切にしたい</li>
+        <li>家事や通院など、日常的に支援が必要</li>
+        <li>他の人と共同生活をしながら、仲間の存在を感じて安心して暮らしたい</li>
+      </ul>
+    </section>
+
+    <!-- 相談支援事業 -->
+    <section id="consultation-support">
+      <h2>相談支援事業って？</h2>
+      <p>相談支援事業は、生活保護の受給者や障がいをお持ちの方などが、地域で安心して生活できるように相談に乗り、必要なサービスへつなげる役割を担う機関・サービスです。</p>
+      <h3>具体的にどんなサポートがあるの？</h3>
+      <ul>
+        <li><strong>生活全般の相談対応</strong>: 「お金の管理が難しい」「どんな施設を利用すればいいか分からない」など、生活面の悩みや不安を気軽に相談できます。</li>
+        <li><strong>福祉サービスの利用調整</strong>: デイサービスやホームヘルプ、グループホームなど、さまざまな福祉サービスとの橋渡しを行います。</li>
+        <li><strong>行政手続きのサポート</strong>: 生活保護の手続きや役所で行う書類提出などに不安がある場合も、一緒に対応します。</li>
+      </ul>
+      <h3>こんな方におすすめ</h3>
+      <ul>
+        <li>自分に合った福祉サービスや住まいを探したい</li>
+        <li>生活保護の制度や手続きについて相談したい</li>
+        <li>生活や将来に不安があり、誰かにアドバイスしてほしい</li>
+      </ul>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>少しでも話してみませんか？あなたのペースで大丈夫です。</p>
+      <a href="mailto:info@example.com" class="btn">無料相談はこちら</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 私たちの相談室. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
