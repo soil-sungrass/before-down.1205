@@ -1,19 +1,18 @@
-/* 夜から朝へのグラデーション効果 */
+/* ======== 夜から朝へのグラデーション修正 ======== */
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.8;
   margin: 0;
   padding: 0;
-  color: #fff; /* 最初は夜なので白字 */
-  background: linear-gradient(to bottom, #0D1B2A, #1B263B, #415A77, #778DA9, #E0E1DD); 
-  /* 夜 (ダークブルー) から朝 (オレンジがかった色) へ */
+  color: #fff; /* 初期は夜なので白文字 */
+  background: linear-gradient(to bottom, #0D1B2A, #1B263B, #3B4D66, #A4B1C2, #E0DED6); 
   background-attachment: fixed;
-  transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out, color 1s ease-in-out;
 }
 
 /* ヘッダー */
 header {
-  background-color: rgba(13, 27, 42, 0.8); /* 夜っぽい半透明の背景 */
+  background-color: rgba(13, 27, 42, 0.85); /* 夜の半透明 */
   color: #fff;
   text-align: center;
   padding: 15px;
@@ -28,7 +27,7 @@ header h1 {
   margin: 0;
 }
 
-/* ナビゲーションボタン */
+/* ナビゲーションメニュー */
 .menu {
   display: flex;
   justify-content: center;
@@ -37,7 +36,7 @@ header h1 {
 }
 
 .menu button {
-  background-color: rgba(65, 90, 119, 0.8); /* 夜をイメージした暗めの色 */
+  background-color: rgba(65, 90, 119, 0.8);
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -48,11 +47,11 @@ header h1 {
 }
 
 .menu button:hover {
-  background-color: #E0E1DD; /* 朝の明るい色に変化 */
+  background-color: #E0DED6;
   color: #333;
 }
 
-/* ヒーローセクション (夜空を表現) */
+/* ======== ヒーローセクション（夜） ======== */
 .hero {
   position: relative;
   background-image: url('iStock-990454406.jpg');
@@ -67,14 +66,15 @@ header h1 {
 }
 
 .hero .overlay {
-  background-color: rgba(0, 0, 0, 0.6); /* 夜の雰囲気を強調 */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
   max-width: 800px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .hero h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
 }
 
@@ -83,66 +83,55 @@ header h1 {
   margin-bottom: 15px;
 }
 
-/* グループホーム説明・相談支援事業 (徐々に明るくなる) */
+/* ======== 各セクション（徐々に明るくする） ======== */
 section {
   padding: 20px;
   max-width: 800px;
   margin: 50px auto;
-  background-color: rgba(255, 255, 255, 0.1); /* 少し明るく */
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
   transition: background 0.5s, color 0.5s;
 }
 
-section h2 {
-  font-size: 1.6rem;
-  color: #E0E1DD; /* 白っぽい色 */
-}
-
-section h3 {
-  font-size: 1.4rem;
-  color: #A6C8FF; /* 青系 */
-}
-
-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-section ul li {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-/* スクロールすると背景が徐々に明るくなる */
+/* ======== スクロールアニメーション：夜から朝へ変化 ======== */
 @keyframes changeBackground {
   0% {
-    background: linear-gradient(to bottom, #0D1B2A, #1B263B, #415A77, #778DA9, #E0E1DD);
+    background: linear-gradient(to bottom, #0D1B2A, #1B263B, #3B4D66, #A4B1C2, #E0DED6);
+    color: #fff;
   }
   50% {
-    background: linear-gradient(to bottom, #1B263B, #415A77, #778DA9, #E0E1DD, #FFD700);
+    background: linear-gradient(to bottom, #1B263B, #3B4D66, #A4B1C2, #E0DED6, #F2E3C6);
+    color: #333;
   }
   100% {
-    background: linear-gradient(to bottom, #415A77, #778DA9, #E0E1DD, #FFD700, #FFAE42);
+    background: linear-gradient(to bottom, #3B4D66, #A4B1C2, #E0DED6, #F2E3C6, #FFD794);
+    color: #222;
   }
 }
 
-/* スクロールイベントで夜から朝へ */
+/* ======== スクロール時に背景が明るくなる演出 ======== */
 body.scrolled {
   animation: changeBackground 2s forwards;
-  color: #333;
 }
 
-/* フッター */
+/* ======== テキストの可読性を向上 ======== */
+.scrolled section {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ======== フッター（明るめの落ち着いた色） ======== */
 footer {
-  background-color: rgba(255, 223, 90, 0.8); /* 朝日っぽい色 */
+  background-color: rgba(240, 217, 160, 0.8);
   color: #333;
   text-align: center;
   padding: 15px 0;
   margin-top: 20px;
 }
 
-/* スマートフォン対応 */
+/* ======== スマートフォン対応 ======== */
 @media (max-width: 768px) {
   .menu {
     flex-direction: column;
