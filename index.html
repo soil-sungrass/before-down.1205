@@ -87,10 +87,14 @@
   </footer>
 
   <script>
-    function scrollToSection(id) {
-      const element = document.getElementById(id);
-      element.scrollIntoView({ behavior: 'smooth' });
+  window.addEventListener("scroll", function() {
+    let body = document.body;
+    if (window.scrollY > 300) { // スクロール量300px以上で明るくなる
+      body.classList.add("scrolled");
+    } else {
+      body.classList.remove("scrolled");
     }
-  </script>
+  });
+</script>
 </body>
 </html>
