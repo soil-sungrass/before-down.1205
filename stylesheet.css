@@ -10,24 +10,28 @@ body {
   transition: background 2s ease-in-out, color 2s ease-in-out;
 }
 
-/* ======== 固定ヘッダー ======== */
+/* ======== 固定ヘッダー（完全固定） ======== */
 header {
-  background-color: rgba(13, 27, 42, 0.9); /* 夜の半透明 */
+  background-color: rgba(13, 27, 42, 0.95); /* 夜の半透明を少し濃く */
   color: #fff;
   text-align: center;
-  padding: 15px;
+  padding: 15px 0;
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0; /* 左端に固定 */
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* スクロールしても常に同じ位置に固定 */
 header h1 {
   font-size: 1.8rem;
   margin: 0;
   padding: 5px 0;
+  letter-spacing: 1px;
 }
+
 
 /* ======== ヒーローセクション（夜） ======== */
 .hero {
@@ -61,6 +65,21 @@ header h1 {
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
+
+/* ======== 強調表示「光を届けたい」 ======== */
+.highlight {
+  font-size: 1.5rem; /* 通常の文字より大きく */
+  font-weight: bold;
+  color: #FFD700; /* 明るいゴールドで光をイメージ */
+  text-shadow: 1px 1px 8px rgba(255, 215, 0, 0.8); /* 光の輝きを演出 */
+  transition: transform 0.3s ease-in-out; /* ホバー時に少し拡大 */
+}
+
+/* ホバー時にわずかに拡大してさらに目立たせる */
+.highlight:hover {
+  transform: scale(1.1);
+}
+
 
 /* ======== 各セクション（徐々に明るく） ======== */
 section {
