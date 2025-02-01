@@ -10,27 +10,29 @@ body {
   transition: background 2s ease-in-out, color 2s ease-in-out;
 }
 
-/* ======== 固定ヘッダー（完全固定） ======== */
+/* ======== 埋め込み型の固定ヘッダー ======== */
 header {
-  background-color: rgba(13, 27, 42, 0.95); /* 夜の半透明を少し濃く */
+  position: sticky; /* 上部に埋め込んで固定 */
+  top: 0;            /* 常に上端に貼り付け */
+  background-color: rgba(13, 27, 42, 0.85); /* 夜の半透明で背景と一体化 */
   color: #fff;
   text-align: center;
-  padding: 15px 0;
-  position: fixed;
+  padding: 10px 0;
   width: 100%;
-  top: 0;
-  left: 0; /* 左端に固定 */
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 少しだけ影をつけて立体感 */
+  backdrop-filter: blur(8px); /* 背景をぼかして自然な埋め込み感 */
 }
 
-/* スクロールしても常に同じ位置に固定 */
+/* ヘッダーテキストのスタイル */
 header h1 {
   font-size: 1.8rem;
   margin: 0;
   padding: 5px 0;
   letter-spacing: 1px;
+  font-weight: bold;
 }
+
 
 
 /* ======== ヒーローセクション（夜） ======== */
@@ -68,11 +70,11 @@ header h1 {
 
 /* ======== 強調表示「光を届けたい」 ======== */
 .highlight {
-  font-size: 1.5rem; /* 通常の文字より大きく */
+  font-size: 1.6rem; /* 通常の文字より大きめ */
   font-weight: bold;
-  color: #FFD700; /* 明るいゴールドで光をイメージ */
-  text-shadow: 1px 1px 8px rgba(255, 215, 0, 0.8); /* 光の輝きを演出 */
-  transition: transform 0.3s ease-in-out; /* ホバー時に少し拡大 */
+  color: #FFD700; /* ゴールドで光を表現 */
+  text-shadow: 1px 1px 8px rgba(255, 215, 0, 0.9); /* 光の輝きを再現 */
+  transition: transform 0.3s ease-in-out;
 }
 
 /* ホバー時にわずかに拡大してさらに目立たせる */
