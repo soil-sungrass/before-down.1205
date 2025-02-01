@@ -1,4 +1,4 @@
-/* ======== 夜から朝へのグラデーション修正 ======== */
+/* ======== 夜から朝へのスムーズなグラデーション ======== */
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.8;
@@ -7,12 +7,12 @@ body {
   color: #fff; /* 初期は夜なので白文字 */
   background: linear-gradient(to bottom, #0D1B2A, #1B263B, #3B4D66, #A4B1C2, #E0DED6); 
   background-attachment: fixed;
-  transition: background 1s ease-in-out, color 1s ease-in-out;
+  transition: background 2s ease-in-out, color 2s ease-in-out;
 }
 
-/* ヘッダー */
+/* ======== 固定ヘッダー ======== */
 header {
-  background-color: rgba(13, 27, 42, 0.85); /* 夜の半透明 */
+  background-color: rgba(13, 27, 42, 0.9); /* 夜の半透明 */
   color: #fff;
   text-align: center;
   padding: 15px;
@@ -20,35 +20,13 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
   font-size: 1.8rem;
   margin: 0;
-}
-
-/* ナビゲーションメニュー */
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.menu button {
-  background-color: rgba(65, 90, 119, 0.8);
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.menu button:hover {
-  background-color: #E0DED6;
-  color: #333;
+  padding: 5px 0;
 }
 
 /* ======== ヒーローセクション（夜） ======== */
@@ -63,6 +41,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 60px; /* ヘッダーの高さ分余白を追加 */
 }
 
 .hero .overlay {
@@ -83,7 +62,7 @@ header h1 {
   margin-bottom: 15px;
 }
 
-/* ======== 各セクション（徐々に明るくする） ======== */
+/* ======== 各セクション（徐々に明るく） ======== */
 section {
   padding: 20px;
   max-width: 800px;
@@ -94,48 +73,48 @@ section {
   transition: background 0.5s, color 0.5s;
 }
 
-/* ======== スクロールアニメーション：夜から朝へ変化 ======== */
+/* ======== スクロール時のアニメーション ======== */
 @keyframes changeBackground {
   0% {
     background: linear-gradient(to bottom, #0D1B2A, #1B263B, #3B4D66, #A4B1C2, #E0DED6);
     color: #fff;
   }
   50% {
-    background: linear-gradient(to bottom, #1B263B, #3B4D66, #A4B1C2, #E0DED6, #F2E3C6);
+    background: linear-gradient(to bottom, #1B263B, #3B4D66, #A4B1C2, #E0DED6, #FFD794);
     color: #333;
   }
   100% {
-    background: linear-gradient(to bottom, #3B4D66, #A4B1C2, #E0DED6, #F2E3C6, #FFD794);
+    background: linear-gradient(to bottom, #3B4D66, #A4B1C2, #FFE8B2, #FFF5CC, #FFD700);
     color: #222;
   }
 }
 
-/* ======== スクロール時に背景が明るくなる演出 ======== */
+/* ======== スクロールイベントでの変化 ======== */
 body.scrolled {
-  animation: changeBackground 2s forwards;
+  animation: changeBackground 3s forwards;
 }
 
-/* ======== テキストの可読性を向上 ======== */
+/* ======== 明るくなるにつれてセクションの背景も明るく ======== */
 .scrolled section {
   background-color: rgba(255, 255, 255, 0.9);
   color: #333;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ======== フッター（明るめの落ち着いた色） ======== */
+/* ======== フッター（明るい朝日風カラー） ======== */
 footer {
-  background-color: rgba(240, 217, 160, 0.8);
+  background-color: rgba(255, 223, 90, 0.85);
   color: #333;
   text-align: center;
   padding: 15px 0;
   margin-top: 20px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ======== スマートフォン対応 ======== */
 @media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    gap: 5px;
+  header h1 {
+    font-size: 1.5rem;
   }
 
   .hero h2 {
@@ -150,7 +129,7 @@ footer {
     padding: 15px;
   }
 
-  .btn {
+  footer {
     font-size: 0.9rem;
   }
 }
